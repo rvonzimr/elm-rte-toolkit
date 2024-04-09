@@ -321,17 +321,7 @@ class ElmEditor extends HTMLElement {
             return null;
         }
 
-        let mutations = [];
-        for (let mutation of mutationsList) {
-            if (mutation.type !== "characterData") {
-                return null;
-            }
-            mutations.push({
-                path: getSelectionPath(mutation.target, this, 0),
-                text: mutation.target.nodeValue
-            });
-        }
-        return mutations;
+        return mutationsList.filter(mutation => mutation.type !== "characterData";
     }
 
     mutationObserverCallback(mutationsList, _) {
