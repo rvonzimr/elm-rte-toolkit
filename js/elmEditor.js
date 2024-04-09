@@ -321,7 +321,7 @@ class ElmEditor extends HTMLElement {
             return null;
         }
 
-        return mutationsList.filter(mutation => mutation.type !== "characterData";
+        return mutationsList.filter(mutation => mutation.type === "characterData");
     }
 
     mutationObserverCallback(mutationsList, _) {
